@@ -25,33 +25,53 @@
 						<input type="checkbox" ng-model="ctrl.checkboxIsClicked">
 					</label>
 				</div>
+			
 			<ul ng-repeat="folder in ctrl.folders">
 				<span ng-bind="folder.name" id="folderName"></span>
-				<li ng-if="ctrl.checkboxIsClicked" ng-repeat="item in ctrl.addItemArray">
+				<li ng-if="ctrl.checkboxIsClicked" ng-repeat="item in folder.items">
 					<span ng-bind="item.name">
 				</li>
 			</ul>
+
+
 		</div>
 
 
 		<div id="addItemBox">
+		<div id="radioBox">
 			<div>
-				<input type="radio" name="grocery" value="grocery" ng-model="ctrl.addItemObject.grocery">Grocery
+				<input type="radio"
+							 name="folder"
+							 ng-value="ctrl.folders[0]"
+							 ng-model="ctrl.userFolderSelection"
+							 class="radios">Grocery
 			</div>
 			<div>
-				<input type="radio" name="vacation" value="vacation" ng-model="ctrl.addItemObject.vacation">Vacation
+				<input type="radio"
+							 name="folder"
+							 ng-value="ctrl.folders[1]"
+							 ng-model="ctrl.userFolderSelection"
+							 class="radios">Vacation
 			</div>
 			<div>
-				<input type="radio" name="angular" value="angular" ng-model="ctrl.addItemObject.angular">Angular
+				<input type="radio"
+							 name="folder"
+							 ng-value="ctrl.folders[2]"
+							 ng-model="ctrl.userFolderSelection"
+							 class="radios">Angular
+			</div>
 			</div>
 			
 
 
-
+				<div id="inputBox">
 					<div>
-						Name: <input type="text" ng-model="ctrl.addItemObject.name">
+						Name: <input type="text" ng-model="ctrl.addItemObject.name" id="input">
 					</div>
+					<div id="button">
 					<button ng-click="ctrl.addItem(ctrl.addItemObject)">Add Item</button>
+					</div>
+				</div>	
 				</div>
 			</div>
 		</div>

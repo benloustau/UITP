@@ -3,66 +3,64 @@ var myModule = angular.module('UITHEMEPICKER', []);
 myModule.controller('MyController', function(){
 	var self = this;
 
-self.colors = [{
+	self.colors = [{
 
-name:"Red",
-backgroundcolor: "red",
-folders: "green",
-item: "blue",
+	name:"Red",
+	backgroundcolor: "red",
+	folders: "green",
+	item: "blue",
 
-}, {
+	}, {
 
-name:"Green",
-backgroundcolor: "green",
-folders: "red",
-item: "blue",
+	name:"Green",
+	backgroundcolor: "green",
+	folders: "red",
+	item: "blue",
 
-}, {
+	}, {
 
-name:"Blue",
-backgroundcolor: "blue",
-folders: "green",
-item: "red",
+	name:"Blue",
+	backgroundcolor: "blue",
+	folders: "green",
+	item: "red",
 
-}, {
+	}, {
 
-name:"Yellow",
-backgroundcolor: "yellow",
-folders: "pink",
-item: "gray",
+	name:"Yellow",
+	backgroundcolor: "yellow",
+	folders: "pink",
+	item: "gray",
 
-}, {
+	}, {
 
-name:"None",
-backgroundcolor: "white",
-folders: "white",
-item: "white",
+	name:"None",
+	backgroundcolor: "white",
+	folders: "white",
+	item: "white",
 
-}];
+	}];
 
-self.selection = self.colors[4];
+	self.selection = self.colors[4];
 
 
-self.folders = [{
+	self.folders = [ {
+		name: "Grocery",
+		items: []
+	}, {
+		name: "Vacation",
+		items: []
+	}, {
+		name: "Angular",
+		items: []
+	}];
 
-	name: "Grocery",
 
-},{
+	self.addItem = function(addItemObject) {
+		self.userFolderSelection.items.push(addItemObject)
+		self.addItemObject = {};
+	};
 
-	name: "Vacation",
-
-},{
-
-	name: "Angular",
-
-}];
-
-self.addItemArray = [];
-
-self.addItem = function(addItemObject) {
-	self.addItemArray.push(addItemObject);
-	self.addItemObject = {};
-};
+	self.userFolderSelection = {};
 
 
 });

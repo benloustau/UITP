@@ -50,6 +50,29 @@ h1{
 	float:left;
 }
 
+#radioBox{
+	float:left;
+	margin:7em 0em 0em 3em;
+}
+
+.radios{
+	margin-top: 5em;
+}
+
+#inputBox{
+	float:left;
+	margin:12em 0em 0em 3.5em;
+}
+
+#input{
+	height:3em;
+}
+
+#button{
+	text-align: right;
+	margin-top:1em;
+}
+
 .red{
 	background-color: red;
 }
